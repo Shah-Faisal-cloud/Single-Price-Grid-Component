@@ -1,0 +1,131 @@
+:root {
+  --body-bg: hsl(204, 43%, 93%);
+  --community-bg: hsl(0, 0%, 100%);
+  --subscription-bg: hsl(179, 62%, 43%);
+  --why-bg: hsl(179, 62%, 46%);
+  --button-bg: hsl(71, 73%, 54%);
+  --p-color: hsl(218, 22%, 67%);
+  --thin-font: 400;
+  --bold-font: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Karla", sans-serif;
+  background-color: var(--body-bg);
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.main-container {
+  width: 620px;
+  height: 430px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.community {
+  grid-column: span 2;
+  background-color: var(--community-bg);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 2rem;
+}
+.community h2 {
+  font-weight: var(--bold-font);
+  color: var(--why-bg);
+}
+.community h3 {
+  font-weight: var(--bold-font);
+  color: var(--button-bg);
+}
+.community p {
+  font-weight: var(--thin-font);
+  color: var(--p-color);
+  line-height: 1.5rem;
+}
+.subscription {
+  background-color: var(--subscription-bg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  color: var(--body-bg);
+}
+.subscription h1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.subscription h1 span {
+  font-weight: var(--thin-font);
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: var(--body-bg);
+}
+.subscription p {
+  font-weight: var(--thin-font);
+  margin-top: -0.7rem;
+}
+.subscription button {
+  background-color: var(--button-bg);
+  color: inherit;
+  font-family: inherit;
+  font-weight: var(--bold-font);
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.why {
+  background-color: var(--why-bg);
+  padding: 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  color: var(--body-bg);
+}
+.why ul {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 335px;
+    height: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    overflow: auto;
+    border-radius: 10px;
+    clip-path: inset(0 round 5px);
+  }
+  .community {
+    grid-column: span 1;
+  }
+  .subscription button {
+    padding: 0.9rem 1.4rem;
+  }
+  .why ul li {
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .main-container {
+    width: 300px;
+    height: 90%;
+  }
+  .subscription button {
+    padding: 0.8rem 1.3rem;
+  }
+}
