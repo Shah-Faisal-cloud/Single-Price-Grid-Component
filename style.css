@@ -20,7 +20,7 @@ body {
   display: grid;
   place-items: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 .main-container {
   width: 620px;
@@ -105,8 +105,7 @@ body {
     height: 90%;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    overflow: auto;
-    border-radius: 10px;
+    overflow: visible;
     clip-path: inset(0 round 5px);
   }
   .community {
